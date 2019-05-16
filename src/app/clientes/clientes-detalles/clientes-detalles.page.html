@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>clientes-detalles</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #editor="ngForm" (ngSubmit)="onSubmitEdit(editor)">
+        <ion-item-sliding *ngFor="let clientes of loadingCliente; index as i">
+            <ion-card>
+                <ion-card-header ngmodel name="cliente">{{ clientes.nombre }}</ion-card-header>
+                <ion-item>
+                    <!-- <ion-input placeholder="Entre Nuevo Valor"> -->
+                    <h5>{{ clientes.nombre }}--</h5>
+                    <ion-input type="text" placeholder="Entre Nuevo Valor" ngModel name="newNombre">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-input placeholder="Entre Nuevo Valor"> -->
+                    <h5>{{ clientes.telefono }}--</h5>
+                    <ion-input type="number" placeholder="Entre Nuevo Valor" ngModel name="newNumero">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-input placeholder="Entre Nuevo Valor "> -->
+                    <h5>{{ clientes.correo }}--</h5>
+                    <ion-input type="email" placeholder="Entre Nuevo Valor" ngModel name="newCorreo">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-button type="submit" routerLink='/menu'>Editar</ion-button>
+                </ion-item>
+            </ion-card>
+        </ion-item-sliding>
+    </form>
+</ion-content>

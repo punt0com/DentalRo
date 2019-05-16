@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>citas-editar</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #editor="ngForm" (ngSubmit)="onSubmitEdit(editor)">
+        <ion-item-sliding *ngFor="let item of loadingCita; index as i">
+            <ion-card>
+                <ion-card-header ngmodel name="cliente">{{ item.cliente }}</ion-card-header>
+                <ion-item>
+                    <!-- <ion-input placeholder="Entre Nuevo Valor"> -->
+                    <h5>{{ item.hora }}--</h5>
+                    <ion-datetime displayFormat="H:mm" placeholder="Entre Nuevo Valor" ngModel name="newHora">
+                    </ion-datetime>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-input placeholder="Entre Nuevo Valor "> -->
+                    <h5>{{ item.fecha }}--</h5>
+                    <ion-datetime displayFormat="DD MM YY" placeholder="Entre Nuevo Valor" ngModel name="newFecha">
+                    </ion-datetime>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="Entre Nuevo Valor" ngModel name="newDescripcion">
+
+                        <h5>{{ item.descripcion }}--</h5>
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-button type="submit" routerLink='/menu'>Editar</ion-button>
+                </ion-item>
+            </ion-card>
+        </ion-item-sliding>
+    </form>
+</ion-content>

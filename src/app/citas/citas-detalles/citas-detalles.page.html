@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title> Citas {{fechaCita}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item-sliding *ngFor="let citas of loadingCita; index as i">
+            <ion-card>
+                <ion-card-header>{{ citas.cliente }}</ion-card-header>
+                <ion-item>
+                    <h2>
+                        {{ citas.hora }}
+                    </h2>
+                </ion-item>
+                <ion-item>
+                    <h3>{{ citas.descripcion }}</h3>
+                </ion-item>
+                <ion-item>
+                    <ion-button [routerLink]='citas.id' readonly>Editar</ion-button>
+                </ion-item>
+            </ion-card>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
